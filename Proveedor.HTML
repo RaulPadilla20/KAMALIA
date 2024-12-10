@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora más sobre nuestros proveedores de eventos.">
+    <meta name="keywords" content="proveedores, eventos, organización, servicios">
+    <meta name="autor" content="KAMALIA">
+    <title>Proveedores de Eventos | KAMALIA</title>
+
+    <!-- Incluir Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: black;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #6e2c00; /* Color café oscuro */
+            color: white;
+            height: 110px;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 0.9rem; /* Tamaño más pequeño */
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .nav-links i {
+            margin-right: 0.5rem;
+        }
+
+        /* Estilo para el contenido principal */
+        #contenido {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 4rem 2rem;
+            background-color: #fdedec;
+            color: #943126;
+            text-align: left;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .formulario {
+            width: 60%;
+            max-width: 600px;
+            margin-right: 2rem;
+        }
+
+        .campo {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+
+        .campo input, .campo select {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .campo label {
+            display: block;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #6e2c00;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 8rem; /* Aumenta el espacio entre el contenido y el pie de página */
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+        
+        .proveedores-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            width: 100%;
+        }
+
+        .proveedor {
+            background-color: #fdedec;
+            padding: 2rem;
+            margin: 1rem;
+            border: 1px solid #943126;
+            border-radius: 8px;
+            width: 250px;
+            text-align: center;
+        }
+
+        .proveedor i {
+            font-size: 3rem;
+            color: #943126;
+            margin-bottom: 1rem;
+        }
+
+        .boton-contactar {
+            background-color: #6e2c00;
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            text-align: center;
+            width: 100%;
+        }
+
+        .boton-contactar:hover {
+            background-color: #943126;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado con logo y botones -->
+    <header>
+        <div class="logo">
+            <img src="kamalia.png" alt="Logo KAMALIA">
+        </div>
+        <ul class="nav-links">
+            <li><a href="inicio.html" id="inicio"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="#" id="empieza-planear"><i class="fas fa-calendar-check"></i> Empieza a planear</a></li>
+            <li><a href="inicio.html#sobre" id="sobre"><i class="fas fa-info-circle"></i> Sobre</a></li>
+            <li><a href="inicio.html#servicios" id="servicios"><i class="fas fa-cogs"></i> Nuestros Servicios</a></li>
+            <li><a href="#organizador"><i class="fas fa-users"></i> Organizador</a></li>
+            <li><a href="#proveedor"><i class="fas fa-handshake"></i> Proveedor</a></li>
+            <!--<li><a href="#" id="cerrar-sesion"><i class="fas fa-door-closed"></i> Cerrar Sesión</a></li>-->
+
+        </ul>
+    </header>
+
+    <!-- Contenido de la página de proveedores -->
+    <section id="contenido">
+        <div class="formulario">
+            <h2>Conoce a nuestros proveedores de eventos</h2>
+            <p>En KAMALIA, trabajamos con los mejores proveedores para garantizar la calidad de tu evento. ¡Explora y encuentra al proveedor ideal para tu ocasión!</p>
+            
+            <!-- Contenedor para proveedores -->
+            <div class="proveedores-container">
+                <div class="proveedor">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Proveedor 1</h3>
+                    <p>Especialista en decoración y catering.</p>
+                    <button class="boton-contactar" onclick="mostrarContacto('Proveedor 1', '555-1234', 'proveedor1@kamalia.com')">Contactar</button>
+                </div>
+                <div class="proveedor">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Proveedor 2</h3>
+                    <p>Organización de bodas y eventos corporativos.</p>
+                    <button class="boton-contactar" onclick="mostrarContacto('Proveedor 2', '555-5678', 'proveedor2@kamalia.com')">Contactar</button>
+                </div>
+                <div class="proveedor">
+                    <i class="fas fa-camera"></i>
+                    <h3>Proveedor 3</h3>
+                    <p>Fotografía y videografía profesional.</p>
+                    <button class="boton-contactar" onclick="mostrarContacto('Proveedor 3', '555-9101', 'proveedor3@kamalia.com')">Contactar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 KAMALIA - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        function mostrarContacto(nombre, telefono, correo) {
+            alert(`Información de contacto de ${nombre}:\nTeléfono: ${telefono}\nCorreo: ${correo}`);
+        }
+    </script>
+    <script>
+        document.getElementById("cerrar-sesion").addEventListener("click", function (event) {
+            event.preventDefault(); // Evitar navegación predeterminada
+            if (confirm("¿Estás seguro de que deseas cerrar sesión?")) {
+                // Redirigir al usuario al login
+                window.location.href = "Login.html";
+            }
+        });
+         // Script para redirigir al hacer clic en "Empieza a planear"
+         document.getElementById("empieza-planear").addEventListener("click", function() {
+            window.location.href = "Empieza a planear.html";
+        });
+        
+    </script>
+    
+</body>
+</html>

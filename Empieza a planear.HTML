@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora más sobre nuestros paquetes y servicios para eventos especiales.">
+    <meta name="keywords" content="eventos, servicios, planificación, paquetes, organización">
+    <meta name="autor" content="KAMALIA">
+    <title>Eventos Especiales | KAMALIA</title>
+
+    <!-- Incluir Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: black;
+            background-color: #f9f9f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        header {
+            background-color: #6e2c00; /* Color café oscuro */
+            color: white;
+            height: 110px;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 0.9rem; /* Tamaño más pequeño */
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .nav-links i {
+            margin-right: 0.5rem;
+        }
+
+        /* Estilo para el contenido principal */
+        #contenido {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 4rem 2rem;
+            background-color: #fdedec;
+            color: #943126;
+            text-align: left;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .formulario {
+            width: 60%;
+            max-width: 600px;
+            margin-right: 2rem;
+        }
+
+        .campo {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+        }
+
+        .campo input, .campo select {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .campo label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .buscador {
+            margin-top: 1.5rem;
+            padding: 0.5rem;
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        footer {
+            background-color: #6e2c00;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            margin-top: 8rem; /* Aumenta el espacio entre el contenido y el pie de página */
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+        /* Estilo para los botones */
+        .boton-buscar {
+            padding: 0.8rem 1.5rem;
+            background-color: #6e2c00;
+            color: white;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            max-width: 250px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .boton-buscar:hover {
+            background-color: #943126;
+        }
+
+        /* Estilo para los botones de paquetes */
+        .paquete-btn {
+            padding: 1rem 2rem;
+            background-color: #6e2c00;
+            color: white;
+            font-size: 1rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            position: relative;
+            margin: 1rem;
+            width: 250px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .paquete-btn:hover {
+            background-color: #943126;
+        }
+
+        /* Estilo para la información de paquete */
+        .paquete-info {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #fdedec;
+            padding: 1rem;
+            border: 1px solid #943126;
+            border-radius: 4px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            font-size: 0.9rem;
+            color: #943126;
+            text-align: left;
+        }
+
+        /* Estilo para los contenedores de botones de paquetes */
+        .paquetes-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            background-color: #fdedec; /* Fondo igual que el cuerpo */
+            padding: 2rem 0;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Estilo para la imagen */
+        .imagen {
+            width: 35%;
+        }
+
+        .imagen img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 8px;
+        }
+
+        /* Estilo para el mensaje del paquete seleccionado */
+        .mensaje-paquete {
+            margin-top: 2rem;
+            padding: 1rem;
+            background-color: #fdedec;
+            color: #943126;
+            text-align: center;
+            border: 1px solid #943126;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            width: 100%;
+            max-width: 600px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado con logo y botones -->
+    <header>
+        <div class="logo">
+            <img src="kamalia.png" alt="Logo KAMALIA">
+        </div>
+        <ul class="nav-links">
+            <li><a href="inicio.html" id="inicio"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="inicio.html#sobre" id="sobre"><i class="fas fa-info-circle"></i> Sobre</a></li>
+            <li><a href="inicio.html#servicios" id="servicios"><i class="fas fa-cogs"></i> Nuestros Servicios</a></li>
+            <li><a href="#organizador"><i class="fas fa-users"></i> Organizador</a></li>
+            <li><a href="#" id="Proveedor-link"><i class="fas fa-handshake"></i> Proveedor</a></li>
+        </ul>
+    </header>
+
+    <!-- Sección principal con el texto solicitado -->
+    <section id="contenido">
+        <div class="formulario">
+            <h2>¡Ayúdanos a buscarte el mejor organizador para ti!</h2>
+            <p>Te ayudamos a encontrar al organizador ideal para tu evento, asegurando que sea una experiencia inolvidable.</p>
+
+            <!-- Pregunta sobre la ubicación -->
+            <div class="campo">
+                <label for="ubicacion">¿Dónde te encuentras?</label>
+                <input type="text" id="ubicacion" placeholder="Introduce tu ubicación">
+            </div>
+
+            <!-- Pregunta sobre el presupuesto -->
+            <div class="campo">
+                <label for="presupuesto">¿Cuál es tu presupuesto?</label>
+                <input type="number" id="presupuesto" placeholder="Introduce tu presupuesto estimado">
+            </div>
+
+            <!-- Selección del tipo de evento -->
+            <div class="campo">
+                <label for="tipoEvento">Tipo de evento</label>
+                <select id="tipoEvento">
+                    <option value="Boda">Boda</option>
+                    <option value="Fiesta">Fiesta de XV años</option>
+                    <option value="Cumpleaños">Cumpleaños</option>
+                    <option value="Corporativo">Evento Corporativo</option>
+                    <option value="Graduacion">Graduación</option>
+                    <option value="Baby Shower">Baby Shower</option>
+                    <option value="Aniversario">Aniversario</option>
+                    <option value="Bautizo y Comuniones">Bautizo y Comuniones</option>
+                    <option value="Despedida de Soltero/a">Despedida de Soltero/a</option>
+                    <option value="Cenas Formales">Cenas Formales</option>
+                </select>
+            </div>
+
+            <!-- Botón de búsqueda -->
+            <button class="boton-buscar" onclick="mostrarMensaje()">Generar</button>
+
+            <!-- Mensaje de confirmación que se mostrará al llenar los campos -->
+            <p id="mensaje" style="color: green; display: none;">Tu evento está siendo organizado. ¡Pronto nos pondremos en contacto contigo!</p>
+        </div>
+
+        <!-- Contenedor para los botones de paquetes y la imagen -->
+        <div class="paquetes-container">
+            <div class="imagen">
+                <img src="Empieza a planear.avif" alt="Paquete Evento">
+            </div>
+            <div class="paquetes">
+                <button class="paquete-btn" onmouseenter="mostrarInfoPaquete('paquete1')" onmouseleave="ocultarInfoPaquete('paquete1')" onclick="mostrarMensajePaquete('paquete1')">Paquete 1</button>
+                <button class="paquete-btn" onmouseenter="mostrarInfoPaquete('paquete2')" onmouseleave="ocultarInfoPaquete('paquete2')" onclick="mostrarMensajePaquete('paquete2')">Paquete 2</button>
+                <button class="paquete-btn" onmouseenter="mostrarInfoPaquete('paquete3')" onmouseleave="ocultarInfoPaquete('paquete3')" onclick="mostrarMensajePaquete('paquete3')">Paquete 3</button>
+            </div>
+
+            <!-- Información sobre el paquete seleccionando (invisible por defecto) -->
+            <div id="paquete1" class="paquete-info">
+                Paquete 1: Servicio básico, decoración y catering incluido.
+            </div>
+            <div id="paquete2" class="paquete-info">
+                Paquete 2: Incluye todo lo del Paquete 1 más música en vivo y animación.
+            </div>
+            <div id="paquete3" class="paquete-info">
+                Paquete 3: Incluye todo lo del Paquete 2 más fotógrafos y video.
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 KAMALIA - Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        function mostrarMensaje() {
+            let ubicacion = document.getElementById('ubicacion').value;
+            let presupuesto = document.getElementById('presupuesto').value;
+            let tipoEvento = document.getElementById('tipoEvento').value;
+
+            if (ubicacion && presupuesto && tipoEvento) {
+                document.getElementById('mensaje').style.display = 'block';
+            }
+        }
+
+        function mostrarMensajePaquete(paquete) {
+            let mensaje = '';
+            switch (paquete) {
+                case 'paquete1':
+                    mensaje = '¡Has seleccionado el Paquete 1!';
+                    break;
+                case 'paquete2':
+                    mensaje = '¡Has seleccionado el Paquete 2!';
+                    break;
+                case 'paquete3':
+                    mensaje = '¡Has seleccionado el Paquete 3!';
+                    break;
+            }
+            alert(mensaje);
+        }
+
+        function mostrarInfoPaquete(paquete) {
+            document.getElementById(paquete).style.display = 'block';
+        }
+
+        function ocultarInfoPaquete(paquete) {
+            document.getElementById(paquete).style.display = 'none';
+        }
+    </script>
+    <script>
+         // Script para redirigir al hacer clic en "Proveedor"
+         document.getElementById("Proveedor-link").addEventListener("click", function() {
+            window.location.href = "Proveedor.html";
+        });
+    </script>
+</body>
+</html>

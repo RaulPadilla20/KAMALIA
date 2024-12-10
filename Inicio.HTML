@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Organiza eventos inolvidables con nuestros paquetes personalizados para bodas, XV años, cumpleaños y más. Contáctanos para crear momentos especiales.">
+    <meta name="keywords" content="eventos, paquetes de eventos, bodas, XV años, cumpleaños, organización de eventos">
+    <meta name="autor" content="KAMALIA">
+    <title>Eventos Especiales</title>
+
+    <!-- Incluir Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: black;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #6e2c00; /* Color café oscuro */
+            color: white;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 0.9rem; /* Tamaño más pequeño */
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .nav-links i {
+            margin-right: 0.5rem;
+        }
+
+        /* Imagen de fondo y texto superpuesto */
+        .hero {
+            position: relative;
+            height: 100vh;
+            background: url('Fondo.AVIF') no-repeat center center/cover;
+        }
+
+        .hero-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+
+        .hero-text p {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+
+        /* Sección Sobre */
+        #sobre {
+            padding: 4rem 2rem;
+            background-color: #fdedec; /*Color del fondo*/
+            color: #943126; /*Color del texto*/
+            text-align: center;
+        }
+        #sobre {
+            font-family: "Times New Roman", sans-serif; /* Cambiar a Verdana */
+        }
+
+        #sobre h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #641e16;
+        }
+
+        #sobre p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Sección Nuestros Servicios */
+        #servicios {
+            padding: 4rem 2rem;
+            background-color: #fdedec;/*Color del fondo*/
+            color: #943126 ; /*Color del texto*/
+            text-align: center;
+        }
+
+        #servicios {
+            font-family: "Times New Roman", sans-serif;/* Cambiar a Verdana */
+        }
+
+        #servicios h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #7b241c;
+        }
+
+        #servicios p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Estilos para los apartados de servicios */
+        .servicios-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .servicio {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            width: 23%;
+        }
+
+        .servicio img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .servicio h3 {
+            margin: 1rem 0;
+            color: #7b241c;
+        }
+
+        /* Estilos del Carrusel */
+        .carousel {
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 1s ease-in-out; /* Desplazamiento suave */
+        }
+
+        .carousel-images img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        /* Animación para el ciclo infinito */
+        @keyframes infinite-scroll {
+            0% {
+                transform: translateX(0);
+            }
+            50% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        .carousel-images {
+            animation: infinite-scroll 20s linear infinite; /* Velocidad de desplazamiento */
+        }
+        /* Pie de página */
+        footer {
+            background-color: #6e2c00;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1rem;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Encabezado con logo y botones -->
+    <header>
+        <div class="logo">
+            <img src="kamalia.png" alt="Logo KAMALIA">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#inicio"id="inicio"><i class="fas fa-home"></i> Inicio</a></li>
+            <li><a href="#" id="empieza-planear"><i class="fas fa-calendar-check"></i> Empieza a planear</a></li>
+            <li><a href="#sobre"><i class="fas fa-info-circle"></i> Sobre</a></li>
+            <li><a href="#servicios"><i class="fas fa-cogs"></i> Nuestros Servicios</a></li> 
+            <li><a href="#organizador"><i class="fas fa-users"></i> Organizador</a></li>
+            <li><a href="#" id="Proveedor-link"><i class="fas fa-handshake"></i> Proveedor</a></li>
+            <!-- Botón de Cerrar Sesión con ícono de puerta -->
+            <li><a href="Login.html"><i class="fas fa-door-closed"></i> Cerrar Sesión</a></li>
+        </ul>
+    </header>
+
+    <!-- Sección principal con fondo y texto -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>KAMALIA le da la bienvenida</h1>
+            <p>Donde tus ideas se convierten en realidad</p>
+        </div>
+    </section>
+
+    <!-- Sección Sobre -->
+    <section id="sobre">
+        <h2>Sobre KAMALIA</h2>
+        <p>
+            Creemos que cada evento es especial y debe reflejar la personalidad y los deseos de nuestros clientes. 
+            Nos esforzamos por entender sus necesidades y transformar sus sueños en realidades. 
+            Ya sea una boda romántica, una fiesta de cumpleaños emocionante o una conferencia empresarial de alto nivel, 
+            estamos comprometidos a hacer que cada detalle cuente.
+        </p>
+    </section>
+
+    <!-- Carrusel de imágenes -->
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="imagen1.WEBP" alt="Imagen 1">
+            <img src="imagen2.WEBP" alt="Imagen 2">
+            <img src="Appetizers.WEBP" alt="Imagen 3">
+            <img src="Beach Wedding.WEBP" alt="Imagen 4">
+            <img src="Chocolate Desserts.WEBP" alt="Imagen 5">
+            <img src="festejo.WEBP" alt="Imagen 6">
+            <img src="Oficina.WEBP" alt="Imagen 7">
+            <img src="Salon.WEBP" alt="Imagen 8">
+            <img src="Wedding Table Setting.WEBP" alt="Imagen 9">
+            <img src="Dance.WEBP" alt = "Imagen 10">
+        </div>
+    </div>
+
+    <!-- Sección Nuestros Servicios -->
+<section id="servicios">
+    <h2>Nuestros Servicios</h2>
+    <p>
+        Nuestros servicios abarcan desde la planificación y coordinación hasta la decoración, el catering, la música y el entretenimiento. 
+        Trabajamos en estrecha colaboración con proveedores de confianza para asegurarnos de ofrecer la mejor calidad en cada aspecto del evento.
+    </p>
+
+    <!-- Contenedores -->
+    <div class="contenedores-adicionales" style="display: flex; justify-content: space-between; gap: 10rem;">
+        <!-- Primer contenedor: Selección de música -->
+        <div class="contenedor">
+            <img src="Wedding Band Stage.AVIF" alt="Selección de música">
+            <h3>Selección de música</h3>
+            <p>Ningún detalle es demasiado pequeño.</p>
+        </div>
+
+        <!-- Segundo contenedor: Planeación de concepto y diseño -->
+        <div class="contenedor">
+            <img src="Concept and Design Planning.AVIF" alt="Planeación de concepto y diseño">
+            <h3>Planeación de concepto y diseño</h3>
+            <p>Hermoso y memorable.</p>
+        </div>
+
+        <!-- Tercer contenedor: Catering y selección de menú -->
+        <div class="contenedor">
+            <img src="catering.AVIF" alt="Catering y selección de menú">
+            <h3>Catering y selección de menú</h3>
+            <p>Desde platillos gourmet hasta opciones más informales.</p>
+        </div>
+</section>
+    <footer>
+        <p>&copy; 2024 KAMALIA. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        // Script para redirigir al hacer clic en "Empieza a planear"
+        document.getElementById("empieza-planear").addEventListener("click", function() {
+            window.location.href = "Empieza a planear.html";
+        });
+        
+        // Script para redirigir al hacer clic en "Proveedor"
+        document.getElementById("Proveedor-link").addEventListener("click", function() {
+            window.location.href = "Proveedor.html";
+        });
+    </script>
+</body>
+</html>

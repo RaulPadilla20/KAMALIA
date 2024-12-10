@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explora más sobre nuestros paquetes y servicios para eventos especiales.">
+    <meta name="keywords" content="eventos, servicios, planificación, paquetes, organización">
+    <meta name="autor" content="KAMALIA">
+    <title>Eventos Especiales | KAMALIA</title>
+
+    <!-- Incluir Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: black;
+            background-color: #f9f9f9;
+        }
+
+        header {
+            background-color: #6e2c00; /* Color café oscuro */
+            color: white;
+            padding: 1.5rem 2rem; /* Aumentamos el padding del encabezado */
+            display: flex;
+            justify-content: space-between; /* Alinea el logo a la izquierda y los botones a la derecha */
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px; /* Aumentamos el tamaño del logo */
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem; /* Aumentamos el espacio entre los botones */
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem; /* Aumentamos el tamaño de los enlaces */
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        .nav-links i {
+            margin-right: 0.5rem;
+        }
+
+        /* Estilo para el login con imagen de fondo */
+        #contenido {
+            padding: 6rem 3rem; /* Aumentamos el padding del contenido */
+            background-image: url('Login.JPEG'); /* Ruta de la imagen */
+            background-size: cover; /* Hace que la imagen cubra todo el fondo */
+            background-position: center; /* Centra la imagen */
+            background-attachment: fixed; /* Fija la imagen de fondo mientras se hace scroll */
+            color: #ecf0f1;
+            text-align: center;
+            background-color: rgba(253, 237, 236, 0.7); /* Fondo semitransparente para que el texto sea legible */
+        }
+
+        .campo {
+            margin: 1.5rem 0; /* Aumentamos el espacio entre los campos */
+            font-size: 1.2rem; /* Aumentamos el tamaño de la fuente */
+        }
+
+        .campo input {
+            width: 80%; /* Ajusta el tamaño del cuadro de texto */
+            padding: 0.8rem; /* Aumentamos el padding de los inputs */
+            margin-top: 0.5rem;
+            font-size: 1.1rem; /* Aumentamos el tamaño de la fuente */
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .campo label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .boton-login {
+            margin-top: 2rem; /* Aumentamos el margen superior */
+            padding: 1rem 2rem; /* Aumentamos el tamaño del botón */
+            background-color: #6e2c00;
+            color: white;
+            font-size: 1.2rem; /* Aumentamos el tamaño de la fuente */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .boton-login:hover {
+            background-color: #943126;
+        }
+
+        footer {
+            background-color: #6e2c00;
+            color: white;
+            text-align: center;
+            padding: 1.5rem; /* Aumentamos el padding del footer */
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 1.2rem; /* Aumentamos el tamaño de la fuente */
+        }
+    </style>
+
+    <script>
+        // Función para validar el login
+        function validarLogin(event) {
+            event.preventDefault(); // Evita el envío del formulario
+
+            const usuario = document.getElementById('usuario').value;
+            const contraseña = document.getElementById('contraseña').value;
+
+            if (usuario === 'Raul' && contraseña === '123') {
+                // Redirigir a la página inicio.HTML si las credenciales son correctas
+                window.location.href = 'inicio.HTML';
+            } else {
+                // Mostrar un mensaje de error si las credenciales son incorrectas
+                alert('Credenciales incorrectas, intenta nuevamente.');
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Encabezado con logo y botones -->
+    <header>
+        <div class="logo">
+            <img src="kamalia.png" alt="Logo KAMALIA">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio de Sesion</a></li>
+        </ul>
+    </header>
+
+    <!-- Sección de Login -->
+    <section id="contenido">
+        <h2>Iniciar Sesión</h2>
+        <p>Por favor, ingresa tus datos para acceder a tu cuenta.</p>
+
+        <!-- Formulario de login -->
+        <form onsubmit="validarLogin(event)">
+            <div class="campo">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" placeholder="Introduce tu nombre de usuario">
+            </div>
+
+            <div class="campo">
+                <label for="contraseña">Contraseña</label>
+                <input type="password" id="contraseña" placeholder="Introduce tu contraseña">
+            </div>
+
+            <button type="submit" class="boton-login">Entrar</button>
+        </form>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2024 KAMALIA. Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>
